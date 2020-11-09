@@ -17,6 +17,9 @@ refs.inputRef.addEventListener('input', debounce(onSearch, 500));
 function onSearch(e) {
     resetSearchForm();
     searchQuery = refs.inputRef.value;
+    if(!searchQuery) {
+        return
+    }
     API.fetchCountry(searchQuery)
     .then(verification)
     .catch(err => {console.log('err')
@@ -31,10 +34,8 @@ function verification (countries) {
 if(countries.length > 10) {
     errorMessage(error, "Too many matches. Please be more specific!")
 } else if(countries.length <= 10 && countries.length > 1) {
-    resetSearchForm();
     renderCountryCard(countriesTpl, countries);
 }else if(countries.length === 1) {
-    resetSearchForm();
     renderCountryCard(countryTpl, countries);
 } else {
     errorMessage(info, "No matches found")

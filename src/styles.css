@@ -23,18 +23,25 @@ ul {
   height: 100vh;
   background-image: url(./images/thumb_l_26812.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: 'Lato', sans-serif;
   color: rgb(10, 10, 10);
 }
+.card-of-country {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 h1 {
   margin-bottom: 20px;
   margin-top: 40px;
   color: #e7f2f8;
   letter-spacing: 3px;
+  font-size: 40px;
 }
 input {
   width: 350px;
@@ -49,7 +56,6 @@ input {
 }
 .card-container {
   width: 600px;
-  height: 300px;
   background-color: #f8fafc;
   border-radius: 20px;
   box-shadow: 0px 2px 1px rgba(153, 153, 153, 0.2),
@@ -60,6 +66,11 @@ input {
 .information-about-country {
   display: flex;
   justify-content: space-between;
+}
+.flag-of-the-country {
+  display: block;
+  width: 300px;
+  height: 180px;
 }
 h2 {
   text-align: center;
@@ -82,4 +93,27 @@ ul {
   border-radius: 20px;
   box-shadow: 0px 2px 1px rgba(153, 153, 153, 0.2),
     0px 1px 1px rgba(153, 153, 153, 0.14), 0px 1px 3px rgba(153, 153, 153, 0.12);
+}
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  .form-inline {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+  }
+  .card-container {
+    width: 100%;
+    padding: 10px;
+  }
+  .flag-of-the-country {
+    width: 200px;
+    height: 120px;
+  }
+  .information-about-country {
+    justify-content: space-around;
+  }
 }
