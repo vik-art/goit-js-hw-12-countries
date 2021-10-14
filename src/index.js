@@ -21,7 +21,10 @@ function onSearch(e) {
         return
     }
     API.fetchCountry(searchQuery)
-    .then(verification)
+    .then(data => {
+        verification(data)
+        console.log(data)
+    })
     .catch(err => {console.log('err')
 })
 }
